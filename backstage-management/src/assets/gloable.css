@@ -1,0 +1,20 @@
+*{
+    margin: 0;   /*margin表示边框外面留的空白，后面的0表示不留空白*/
+    padding: 0;  /*padding表示边框内部带内容之间填充，后面的0表示不留空白*/
+    box-sizing: border-box;
+}
+html.body{
+    height: 100%;
+}
+.ml-5{
+    margin-left: 6px;
+}
+.mr-5{
+    margin-right: 7px;
+}
+.pd-10{
+    padding: 10px 0;
+}
+.font-size{
+    font-size: 17px;
+}

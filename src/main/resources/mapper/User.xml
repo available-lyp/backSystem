@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qingege.backsystem.mapper.UserMapper">
+    <update id="update">
+        UPDATE sys_user
+        /* 这是动态SQL，在执行更新之前，会使用判断，如果属性为不为空的话，就可以使用更新。（为空的话，就使用新增，这块没有）*/
+        <set>
+            <if test="username !=null">
+                username = #{username},
+            </if>
+        </set>
+        <!--  password一般会有专门的一部分去修改，而不是和其他的属性一起修改，所以这儿需要注释掉
+        <set>
+             <if test="username !=null">
+                 password = #{password}
+             </if>
+        </set> -->
+        <set>
+            <if test="nickname !=null">
+                nickname = #{nickname},
+            </if>
+        </set>
+        <set>
+            <if test="email !=null">
+                email = #{email},
+            </if>
+        </set>
+        <set>
+            <if test="phone !=null">
+                phone = #{phone},
+            </if>
+        </set>
+        <set>
+            <if test="address !=null">
+                address = #{address}
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+</mapper>

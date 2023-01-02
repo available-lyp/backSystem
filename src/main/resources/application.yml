@@ -1,0 +1,27 @@
+server:
+  port: 9090
+
+spring:
+  # 解决swagger与springboot的版本冲突问题导致的swagger.html页面不显示的问题
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # 数据库设置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/backstage-management?serverTimezone=GMT%2b8
+    username: root
+    password: 134340
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml   #这是指定mapper文件，classpath表示的是resources目录下的。
+
+# 关于mybatis操作数据库的日志打印
+    #  configuration:
+    #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #  关于mybatis-Plus则使用的是下面的这个日志打印
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
